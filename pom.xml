@@ -19,7 +19,21 @@
         </dependency>
     </dependencies>
 
+	<developers>
+		<developer>
+			<name>nambi sankaran</name>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
 
+	<licenses>
+		<license>
+			<name>GNU General Public License 2</name>
+		</license>
+	</licenses>
+    
     <build>
         <pluginManagement>
             <plugins>
@@ -36,4 +50,8 @@
     </build>
 
 
+    <scm>
+    	<developerConnection>git@github.com:snambi/GeoIP.git</developerConnection>
+    	<url>https://github.com/snambi/GeoIP</url>
+    </scm>
 </project>

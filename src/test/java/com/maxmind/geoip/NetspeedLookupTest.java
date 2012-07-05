@@ -2,6 +2,7 @@ package com.maxmind.geoip;
 /* NetspeedLookup.java */
 
 import java.io.IOException;
+import java.net.URL;
 
 /* sample of how to use the GeoIP Java API with GeoIP Netspeed database */
 /* Usage: java NetspeedLookupTest 24.24.24.24 */
@@ -9,7 +10,9 @@ import java.io.IOException;
 class NetspeedLookupTest {
     public static void main(String[] args) {
         try {
-            LookupService cl = new LookupService("/usr/local/share/GeoIP/GeoIPNetspeed.dat");
+        	
+        	URL location = NetspeedLookupTest.class.getClassLoader().getResource("GeoIPNetspeed.dat");
+            LookupService cl = new LookupService( location.getFile() );
             if (args.length > 0) {
                 int speed = cl.getID(args[0]);
 	        if (speed == cl.GEOIP_UNKNOWN_SPEED){

@@ -5,19 +5,23 @@ package com.maxmind.geoip;
 /* For Geoip City Edition, use CityLookupTest.java */
 
 import java.io.IOException;
+import java.net.URL;
 
 class CountryLookupTestV6 {
     public static void main(String[] args) {
 	try {
-	    String sep = System.getProperty("file.separator");
+	    //String sep = System.getProperty("file.separator");
 
 	    // Uncomment for windows
 	    // String dir = System.getProperty("user.dir"); 
 
 	    // Uncomment for Linux
-	    String dir = "/usr/local/share/GeoIP";
-
-	    String dbfile = dir + sep + "GeoIPv6.dat"; 
+	    //String dir = "/usr/local/share/GeoIP";
+	    //String dbfile = dir + sep + "GeoIPv6.dat";
+	    
+	    URL location = CountryLookupTestV6.class.getClassLoader().getResource("GeoIPv6.dat");
+	    String dbfile = location.getFile();
+	    
 	    // You should only call LookupService once, especially if you use
 	    // GEOIP_MEMORY_CACHE mode, since the LookupService constructor takes up
 	    // resources to load the GeoIP.dat file into memory

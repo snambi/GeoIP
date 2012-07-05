@@ -3,6 +3,7 @@ package com.maxmind.geoip;
 /* CityLookupTest.java */
 
 import java.io.IOException;
+import java.net.URL;
 
 /* sample of how to use the GeoIP Java API with GeoIP City database */
 /* Usage: java CityLookupTest 64.4.4.4 */
@@ -10,8 +11,10 @@ import java.io.IOException;
 class CityLookupTestV6 {
     public static void main(String[] args) {
 	try {
-	    LookupService cl = new LookupService("/usr/local/share/GeoIP/GeoLiteCityv6.dat",
-					LookupService.GEOIP_MEMORY_CACHE );
+		
+		URL location = CityLookupTestV6.class.getClassLoader().getResource("GeoLiteCityv6.dat");
+		
+	    LookupService cl = new LookupService( location.getFile(), LookupService.GEOIP_MEMORY_CACHE );
             Location l1 = cl.getLocationV6("::213.52.50.8");
             Location l2 = cl.getLocationV6(args[0]);
 	    System.out.println("countryCode: " + l2.countryCode +

@@ -1,8 +1,8 @@
 package com.maxmind.geoip;
 /* OrgLookupTest.java */
 
-import com.maxmind.geoip.*;
 import java.io.IOException;
+import java.net.URL;
 
 /* sample of how to use the GeoIP Java API with GeoIP Organization and ISP databases */
 /* This example can also be used with the GeoIP Domain and ASNum databases */
@@ -11,7 +11,9 @@ import java.io.IOException;
 class ASNumLookupTest {
     public static void main(String[] args) {
 	try {
-	    LookupService asnl = new LookupService("/usr/local/share/GeoIP/GeoIPASNum.dat");
+		
+		URL location = ASNumLookupTest.class.getClassLoader().getResource("GeoIPASNum.dat");
+	    LookupService asnl = new LookupService( location.getFile());
 	    System.out.println("ASNum: " + asnl.getOrg(args[0]));
 	    asnl.close();
 	}
