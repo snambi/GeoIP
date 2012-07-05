@@ -57,4 +57,22 @@ public class Location {
         temp = Math.pow(Math.sin(delta_lat/2),2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(delta_lon/2),2);
         return EARTH_DIAMETER * Math.atan2(Math.sqrt(temp),Math.sqrt(1-temp));
     }
+    
+    public String toString(){
+    	StringBuilder sb = new StringBuilder();
+    	
+    	sb.append( latitude);
+    	sb.append(",");
+    	sb.append( longitude);
+    	sb.append(";");
+    	sb.append(city);
+    	sb.append(",");
+    	sb.append(region);
+    	sb.append(",");
+    	sb.append(countryName);
+    	sb.append(",");
+    	sb.append(postalCode);
+    	
+    	return sb.toString();
+    }
 }
