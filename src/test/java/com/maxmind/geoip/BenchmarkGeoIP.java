@@ -1,5 +1,6 @@
-import java.io.*;
-import com.maxmind.geoip.*;
+package com.maxmind.geoip;
+
+import com.maxmind.geoip.LookupService;
 
 class BenchmarkGeoIP {
 

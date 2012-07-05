@@ -1,6 +1,6 @@
+package com.maxmind.geoip;
 /* NetspeedLookup.java */
 
-import com.maxmind.geoip.*;
 import java.io.IOException;
 
 /* sample of how to use the GeoIP Java API with GeoIP Netspeed database */

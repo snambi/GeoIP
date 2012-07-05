@@ -1,3 +1,4 @@
+package com.maxmind.geoip;
 /* OrgLookupTest.java */
 
 import com.maxmind.geoip.*;
@@ -7,11 +8,11 @@ import java.io.IOException;
 /* This example can also be used with the GeoIP Domain and ASNum databases */
 /* Usage: java OrgLookupTest 64.4.4.4 */
 
-class ASNumLookupTestV6 {
+class ASNumLookupTest {
     public static void main(String[] args) {
 	try {
-	    LookupService asnl = new LookupService("/usr/local/share/GeoIP/GeoIPASNumv6.dat");
-	    System.out.println("ASNum V6: " + asnl.getOrgV6(args[0]));
+	    LookupService asnl = new LookupService("/usr/local/share/GeoIP/GeoIPASNum.dat");
+	    System.out.println("ASNum: " + asnl.getOrg(args[0]));
 	    asnl.close();
 	}
 	catch (IOException e) {

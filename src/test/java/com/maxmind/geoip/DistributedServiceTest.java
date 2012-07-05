@@ -1,6 +1,7 @@
+package com.maxmind.geoip;
+
 // Usage: CLASSPATH=".:source" java DistributedServiceTest LICENSE_KEY 24.24.24.24
 
-import com.maxmind.geoip.*;
 import java.io.IOException;
 
 class DistributedServiceTest {
